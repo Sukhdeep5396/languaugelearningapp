@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:paddingTop="48dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Profile"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"
+                android:layout_marginStart="24dp"
+                android:paddingTop="32dp"
+                android:layout_marginBottom="16dp" />
+
+
+
+
+            <EditText android:id="@+id/editFullName"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:padding="12dp" />
+
+            <EditText android:id="@+id/editUsername"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Username"
+                android:inputType="text"
+                android:padding="12dp" />
+
+            <EditText android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:padding="12dp" />
+
+            <EditText android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Phone (Optional)"
+                android:inputType="phone"
+                android:padding="12dp" />
+
+            <EditText android:id="@+id/editLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Language"
+                android:inputType="text"
+                android:padding="12dp" />
+
+            <EditText android:id="@+id/editLevel"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Level"
+                android:inputType="text"
+                android:padding="12dp" />
+
+            <Button android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Save"
+                android:layout_marginTop="16dp"
+                android:textAllCaps="false" />
+
+            <TextView android:id="@+id/summaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/primaryColor"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu" />
+</LinearLayout>

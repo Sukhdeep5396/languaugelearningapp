@@ -1,0 +1,43 @@
+{
+  "lessons": [
+    {
+      "category": "Greetings",
+      "items": [
+        { "en": "Hello", "fr": "Bonjour" },
+        { "en": "Good morning", "fr": "Bonjour" },
+        { "en": "Good night", "fr": "Bonne nuit" },
+        { "en": "How are you?", "fr": "Comment ça va ?" }
+      ]
+    },
+    {
+      "category": "Numbers",
+      "items": [
+        { "en": "One", "fr": "Un" },
+        { "en": "Two", "fr": "Deux" },
+        { "en": "Three", "fr": "Trois" },
+        { "en": "Four", "fr": "Quatre" },
+        { "en": "Five", "fr": "Cinq" }
+      ]
+    },
+    {
+      "category": "Days of the Week",
+      "items": [
+        { "en": "Monday", "fr": "Lundi" },
+        { "en": "Tuesday", "fr": "Mardi" },
+        { "en": "Wednesday", "fr": "Mercredi" },
+        { "en": "Thursday", "fr": "Jeudi" },
+        { "en": "Friday", "fr": "Vendredi" }
+      ]
+    },
+    {
+      "category": "Colors",
+      "items": [
+        { "en": "Red", "fr": "Rouge" },
+        { "en": "Blue", "fr": "Bleu" },
+        { "en": "Green", "fr": "Vert" },
+        { "en": "Yellow", "fr": "Jaune" },
+        { "en": "Black", "fr": "Noir" }
+      ]
+    }
+  ]
+}
