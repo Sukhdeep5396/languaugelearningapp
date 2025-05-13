@@ -13,7 +13,7 @@
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Language Learner"
+        android:text="Lang Loom"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/primaryColor"

@@ -2,15 +2,18 @@ package com.harrie.learninglanguageapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private EditText editFullName, editUsername, editEmail, editPhone, editLanguage, editLevel;
+    private EditText editFullName, editEmail, editLanguage;
+    private Spinner spinnerLevel;
     private TextView summaryText;
     private Button btnSave;
 
@@ -19,29 +22,33 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // Initialize UI elements
+        // Initialize views
         editFullName = findViewById(R.id.editFullName);
-        editUsername = findViewById(R.id.editUsername);
         editEmail = findViewById(R.id.editEmail);
-        editPhone = findViewById(R.id.editPhone);
         editLanguage = findViewById(R.id.editLanguage);
-        editLevel = findViewById(R.id.editLevel);
+        spinnerLevel = findViewById(R.id.spinnerLevel);
         btnSave = findViewById(R.id.btnSave);
         summaryText = findViewById(R.id.summaryText);
 
+        // Set up Spinner (dropdown)
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.level_options,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLevel.setAdapter(adapter);
+
         // Save button logic
         btnSave.setOnClickListener(v -> {
-            String summary = "Name: " + editFullName.getText().toString() + "\n"
-                    + "Username: " + editUsername.getText().toString() + "\n"
-                    + "Email: " + editEmail.getText().toString() + "\n"
-                    + "Phone: " + editPhone.getText().toString() + "\n"
-                    + "Language: " + editLanguage.getText().toString() + "\n"
-                    + "Level: " + editLevel.getText().toString();
-
+            String summary = "👤 " + editFullName.getText().toString() + "\n"
+                    + "📧 " + editEmail.getText().toString() + "\n"
+                    + "🈯 Language: " + editLanguage.getText().toString() + "\n"
+                    + "📈 Level: " + spinnerLevel.getSelectedItem().toString();
             summaryText.setText(summary);
         });
 
-        // Bottom navigation
+        // Bottom navigation handling
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setSelectedItemId(R.id.nav_profile);
 

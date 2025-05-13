@@ -21,17 +21,18 @@ public class LessonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-        // Toolbar setup with back navigation
+        // Toolbar setup with back navigation and white title
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("French Lessons");
+            toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));  // Set title color to white
         }
 
         // Bottom Navigation
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
-        bottomNav.setSelectedItemId(R.id.nav_home);  // or highlight the current
+        bottomNav.setSelectedItemId(R.id.nav_home);
         bottomNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
@@ -50,7 +51,7 @@ public class LessonsActivity extends AppCompatActivity {
         // Initialize DB
         dbHelper = new LessonDatabaseHelper(this);
 
-        // Load lessons from DB
+        // Load lessons
         lessonContainer = findViewById(R.id.lessonContainer);
         loadLessonsFromDatabase();
     }
@@ -58,7 +59,7 @@ public class LessonsActivity extends AppCompatActivity {
     private void loadLessonsFromDatabase() {
         List<Lesson> lessons = dbHelper.getAllLessons();
         for (Lesson lesson : lessons) {
-            // Lesson Title
+            // Title
             TextView titleView = new TextView(this);
             titleView.setText(lesson.getTitle());
             titleView.setTextSize(18f);
@@ -67,7 +68,7 @@ public class LessonsActivity extends AppCompatActivity {
             titleView.setTypeface(null, android.graphics.Typeface.BOLD);
             lessonContainer.addView(titleView);
 
-            // Lesson Content
+            // Content
             String[] lines = lesson.getContent().split("\n");
             for (String line : lines) {
                 TextView contentView = new TextView(this);
@@ -82,7 +83,7 @@ public class LessonsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finish(); // go back to previous screen
+            finish(); // Go back
             return true;
         }
         return super.onOptionsItemSelected(item);
